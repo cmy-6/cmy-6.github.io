@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="https://dotrycloud.top/media/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://dotrycloud.top/styles/main.css">
     
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/vs2015.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/dracula.min.css">
     
     <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/js/clipboard.min.js"></script>
@@ -89,7 +89,7 @@
                         src='https://dotrycloud.top/media/images/music.png' alt="音乐播放器" class="musicbtn"></i></a>
         </div>
         <div class="avatar-border">
-            <img src="https://dotrycloud.top/images/avatar.png?v=1632134266203" class="avatar">
+            <img src="https://dotrycloud.top/images/avatar.png?v=1632139259486" class="avatar">
         </div>
         <div class="sitename">CloudBlog</div>
         <span class="description" data-text='["凝视深渊的阿执"]'>&nbsp;</span>
@@ -128,7 +128,7 @@
         
         
         <div class="mchocie description">
-            <a data-pjax href="/" class="menubutton" style="margin-right: 15px;">
+            <a data-pjax href="https://dotrycloud.top" class="menubutton" style="margin-right: 15px;">
                 <i><img class="icon menuicon" src="" alt="Homepage"></i>&nbsp;<span
                     data-text="Homepage">Homepage</span>
             </a>
@@ -155,7 +155,7 @@
         
         
         <div class="mchocie description">
-            <a data-pjax href="https://dotrycloud.top/about" class="menubutton" style="margin-right: 15px;">
+            <a data-pjax href="https://dotrycloud.top/post/about" class="menubutton" style="margin-right: 15px;">
                 <i><img class="icon menuicon" src="" alt="about"></i>&nbsp;<span
                     data-text="about">about</span>
             </a>
@@ -227,7 +227,7 @@
                 </div>
                 
             </div>
-            <div class="copyright" style="color:white;text-align: center;">
+            <div class="copyright" style="color:white;text-align: center;">Copyright © 2020  备案号: 鄂ICP备...号
             </div>
         </div>
 
@@ -339,6 +339,11 @@
     <div id="side-posttitle" style="display: none;">
     
     
+    关于
+    <script>
+        postsnum += 1
+    </script>
+    
     
     
     Hello Gridea
@@ -365,6 +370,12 @@
         var icondict = new Array();
     </script>
     
+        
+            <script>
+                var iconname = "";
+                var iconurl = "";
+                icondict[iconname] = iconurl;
+            </script>
         
     
     <!----------根据自定义配置设置图标信息👆---------->
@@ -849,7 +860,7 @@ menulist.eq(i).show();
         
         
         <li>
-          <a data-pjax href="/">
+          <a data-pjax href="https://dotrycloud.top">
             Homepage
           </a>
         </li>
@@ -873,7 +884,7 @@ menulist.eq(i).show();
         
         
         <li>
-          <a data-pjax href="https://dotrycloud.top/about">
+          <a data-pjax href="https://dotrycloud.top/post/about">
             about
           </a>
         </li>
@@ -940,11 +951,11 @@ menulist.eq(i).show();
                     <div class="mobilebar">
                         <img src="" alt="" class="plbg">
 <script>
-    var bgchoice = "default";
+    var bgchoice = "link";
     if(bgchoice=='default')
-        var plbgurl = "\media\images\custom-mobileplbgimage.jpg"
-    else  
         var plbgurl = ""
+    else  
+        var plbgurl = "https://picsum.photos/id/6/200/300"
     $(".plbg").attr("src",plbgurl);
     $(".plbg").fadeIn(200);
 </script>
@@ -968,15 +979,78 @@ menulist.eq(i).show();
             </div>
             <!-- aplayer播放器加载👇 -->
             
+                <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+</head>
+
+<body>
+    <div class="miniMode">
+        <meting-js id="myaplayer" server="netease" type="playlist" fixed="true" order="default" muted="muted">
+        </meting-js>
+    </div>
+</body>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+<script>
+    function aplayerInit() {
+        var aplayerid = "2302705693";
+        var aplayerserver = "netease";
+        var aplayerorder = "random";
+        var aplayerautoplay = "true";
+        var aplayer = $("#myaplayer");
+        aplayer.attr("server", aplayerserver);
+        aplayer.attr("id", aplayerid);
+        aplayer.attr("order", aplayerorder);
+        if (aplayerautoplay == "true")
+            aplayer.attr("autoplay", "true");
+    }
+    aplayerInit();
+</script>
+
+<script src="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/js/Aplayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+<script>
+    function aplayerbtnInit() {
+        var player = document.querySelectorAll('meting-js')[0].aplayer;
+        if(player==undefined)return false;
+        player.lrc.hide();
+        var mbabtn = $("#mbaplayer");
+        if (player.paused == false) {
+            mbabtn.removeClass("fa-play-circle-o");
+            mbabtn.addClass("fa-pause-circle");
+        } else {
+            mbabtn.addClass("fa-play-circle-o");
+            mbabtn.removeClass("fa-pause-circle");
+        }
+    }
+
+    function aplayerPlay() {
+        var player = document.querySelectorAll('meting-js')[0].aplayer;
+        var mbabtn = $("#mbaplayer");
+        if (player.paused == true) {
+            player.play();
+            mbabtn.removeClass("fa-play-circle-o");
+            mbabtn.addClass("fa-pause-circle");
+        } else {
+            player.pause();
+            mbabtn.addClass("fa-play-circle-o");
+            mbabtn.removeClass("fa-pause-circle");
+        }
+    }
+</script>
+            
             <!-- aplayer播放器加载👆 -->
         </div>
         <div id="bg">
         </div>
         <!-- 背景图加载方式👇 -->
-        <div id="bgchoice" style="display: none">default
+        <div id="bgchoice" style="display: none">link
             </div>
             
-            <div id="bgurl" style="display:none">\media\images\custom-bgimage.jpg</div>
+            <div id="bgurl" style="display:none">https://picsum.photos/id/2/200/300</div>
                
         <!-- 背景图加载方式👆 -->
     </div>
@@ -1004,7 +1078,7 @@ menulist.eq(i).show();
 
 <!------------ 加载全局背景图功能👇（开始时没有写好，这功能有点鸡肋/(ㄒoㄒ)/~~） -->
 <script>
-    var bgchoice = "default"
+    var bgchoice = "link"
     var bg = $('#bg');
     var bgurl = document.getElementById("bgurl").innerHTML;
     if (bgchoice == 'default')

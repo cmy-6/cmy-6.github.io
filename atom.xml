@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dotrycloud.top</id>
     <title>CloudBlog</title>
-    <updated>2021-09-24T09:37:59.197Z</updated>
+    <updated>2021-09-24T13:59:44.213Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dotrycloud.top"/>
     <link rel="self" href="https://dotrycloud.top/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://dotrycloud.top/images/avatar.png</logo>
     <icon>https://dotrycloud.top/favicon.ico</icon>
     <rights>All rights reserved 2021, CloudBlog</rights>
+    <entry>
+        <title type="html"><![CDATA[ 第一章 基础数据类型]]></title>
+        <id>https://dotrycloud.top/post/basedata/</id>
+        <link href="https://dotrycloud.top/post/basedata/">
+        </link>
+        <updated>2021-09-24T13:33:31.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[L1-001 Hello World (5 分)]]></title>
         <id>https://dotrycloud.top/post/L1-001/</id>

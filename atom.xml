@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dotrycloud.top</id>
     <title>CloudBlog</title>
-    <updated>2021-09-25T07:59:16.296Z</updated>
+    <updated>2021-09-25T08:02:46.998Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dotrycloud.top"/>
     <link rel="self" href="https://dotrycloud.top/atom.xml"/>
@@ -12,8 +12,8 @@
     <rights>All rights reserved 2021, CloudBlog</rights>
     <entry>
         <title type="html"><![CDATA[L1-007 念数字 (10 分)]]></title>
-        <id>https://dotrycloud.top/post/vQTWDvtjB/</id>
-        <link href="https://dotrycloud.top/post/vQTWDvtjB/">
+        <id>https://dotrycloud.top/post/L1-007/</id>
+        <link href="https://dotrycloud.top/post/L1-007/">
         </link>
         <updated>2021-09-25T07:53:51.000Z</updated>
     </entry>
